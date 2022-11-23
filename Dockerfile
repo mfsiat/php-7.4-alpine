@@ -9,6 +9,14 @@ RUN apt-get update \
 RUN pecl install imagick \
  && docker-php-ext-enable imagick
 
+RUN apt-get install php7.4-zip
+RUN apt-get install php7.4-xml
+RUN apt-get install php7.4-common
+RUN apt-get install php7.4-gd
+RUN apt-get install php7.4-mbstring
+RUN apt-get install php7.4-curl
+RUN apt-get install php7.4-cli
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& php composer-setup.php \
 	&& php -r "unlink('composer-setup.php');" \
