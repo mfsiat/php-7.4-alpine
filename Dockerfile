@@ -1,4 +1,4 @@
-FROM php:7.4.1-apache
+FROM php:7.4.1-cli
 
 RUN apt-get update \
  && apt-get install --assume-yes --no-install-recommends --quiet \
@@ -9,7 +9,7 @@ RUN apt-get update \
 RUN pecl install imagick \
  && docker-php-ext-enable imagick
 
-RUN apt-get install php7.4-zip
+RUN apt-get install php-zip
 RUN apt-get install php7.4-xml
 RUN apt-get install php7.4-common
 RUN apt-get install php7.4-gd
